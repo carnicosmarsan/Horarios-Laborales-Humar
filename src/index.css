@@ -4,21 +4,24 @@
 @theme {
   --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
 
-  --color-bg: #f8fafc;
-  --color-sidebar: #ffffff;
-  --color-primary: #2563eb;
-  --color-primary-dark: #1e40af;
-  --color-text-main: #0f172a;
-  --color-text-muted: #64748b;
-  --color-border: #e2e8f0;
-  --color-accent: #f1f5f9;
+  --color-bg: #ffffff;
+  --color-sidebar: #fafafa;
+  --color-primary: #D4AF37; /* Gold */
+  --color-primary-dark: #B8860B; /* Darker Gold */
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #71717a;
+  --color-border: #f1f1f1;
+  --color-accent: #f8f8f8;
   
-  /* Additional theme colors from the design */
-  --color-info-bg: #fffbeb;
-  --color-info-border: #fde68a;
-  --color-info-text: #92400e;
-  --color-info-icon: #f59e0b;
+  --color-brand-red: #C41E3A; /* Touch of Red */
+  
+  /* Additional theme colors Adjusted for Gold/Red/White */
+  --color-info-bg: #fffcf0;
+  --color-info-border: #f9f1c5;
+  --color-info-text: #856404;
+  --color-info-icon: #D4AF37;
 }
+
 
 @layer base {
   body {

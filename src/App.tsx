@@ -86,17 +86,25 @@ export default function App() {
     <div className="flex flex-col md:flex-row min-h-screen bg-bg text-text-main">
       {/* Sidebar */}
       <aside className="w-full md:w-[320px] bg-sidebar border-b md:border-b-0 md:border-r border-border p-10 flex flex-col shrink-0 md:sticky md:top-0 md:h-screen">
-        <div className="mb-12">
-          <div className="text-xl font-extrabold tracking-tight text-primary uppercase">
-            Humar / Marsan
+        <div className="mb-10 text-center md:text-left flex flex-col items-center md:items-start">
+          <div className="w-24 h-24 mb-6 rounded-2xl overflow-hidden shadow-xl ring-2 ring-primary/20 bg-white p-2">
+            <img 
+              src="https://drive.google.com/uc?export=view&id=1zRQz5rurIMEiMVkkXqsLVmLXh9pFlIY6" 
+              alt="Humar / Marsan Logo" 
+              className="w-full h-full object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
-          <div className="text-[11px] text-text-muted mt-1 font-semibold uppercase tracking-wider">
-            Gestión de Horarios Laborales
+          <div className="text-xl font-black tracking-tighter text-text-main uppercase">
+            Humar / <span className="text-brand-red">Marsan</span>
+          </div>
+          <div className="text-[10px] text-primary mt-1 font-black uppercase tracking-[0.2em]">
+            Horarios Laborales 2026
           </div>
         </div>
 
         <div className="mt-4">
-          <label className="block text-[10px] font-bold text-text-muted uppercase tracking-widest mb-2">
+          <label className="block text-[10px] font-black text-text-muted uppercase tracking-widest mb-3">
             Consultar Colaborador
           </label>
           <form onSubmit={handleSearch} className="space-y-4">
@@ -104,18 +112,19 @@ export default function App() {
               type="text"
               value={searchId}
               onChange={(e) => setSearchId(e.target.value)}
-              placeholder="Ingresa tu cédula..."
-              className="w-full p-3 border-2 border-border rounded-lg text-sm focus:border-primary outline-none transition-all placeholder:text-text-muted/50"
+              placeholder="Cédula..."
+              className="w-full p-4 border-2 border-border rounded-xl text-sm focus:border-primary outline-none transition-all placeholder:text-text-muted/40 font-bold bg-white"
               required
             />
             <button
               type="submit"
-              className="w-full p-3 bg-primary hover:bg-primary-dark text-white rounded-lg font-bold text-sm tracking-wide transition-colors flex items-center justify-center gap-2"
+              className="w-full p-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-black text-xs tracking-widest transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-95"
             >
               <Search className="w-4 h-4" />
-              VER MI HORARIO
+              CONSULTAR
             </button>
           </form>
+
           
           <AnimatePresence>
             {error && (
@@ -173,27 +182,27 @@ export default function App() {
             >
               {/* Stats Section */}
               <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-sidebar p-5 border border-border rounded-xl">
+                <div className="bg-white p-5 border border-border rounded-xl shadow-sm">
                   <div className="text-[10px] text-text-muted font-bold uppercase tracking-widest">
                     Cédula Identidad
                   </div>
-                  <div className="text-lg font-bold mt-1 text-text-main">
+                  <div className="text-lg font-black mt-1 text-brand-red">
                     {selectedMember.cedula}
                   </div>
                 </div>
-                <div className="bg-sidebar p-5 border border-border rounded-xl">
+                <div className="bg-white p-5 border border-border rounded-xl shadow-sm">
                   <div className="text-[10px] text-text-muted font-bold uppercase tracking-widest">
                     Turno Semanal
                   </div>
-                  <div className="text-lg font-bold mt-1 text-text-main">
+                  <div className="text-lg font-black mt-1 text-primary">
                     {scheduleInfo[0]?.value || 'Programado'}
                   </div>
                 </div>
-                <div className="bg-sidebar p-5 border border-border rounded-xl">
+                <div className="bg-white p-5 border border-border rounded-xl shadow-sm">
                   <div className="text-[10px] text-text-muted font-bold uppercase tracking-widest">
                     Próximo Periodo
                   </div>
-                  <div className="text-lg font-bold mt-1 text-text-main">
+                  <div className="text-lg font-black mt-1 text-text-main">
                     Semana Actual 2026
                   </div>
                 </div>
@@ -205,18 +214,21 @@ export default function App() {
                   <div 
                     key={idx}
                     className={cn(
-                      "group bg-sidebar border border-border rounded-xl flex flex-col h-full transition-all hover:border-primary/30",
-                      idx === 0 && "border-2 border-primary"
+                      "group bg-white border border-border rounded-xl flex flex-col h-full transition-all hover:border-primary/50 shadow-sm",
+                      idx === 0 && "border-2 border-primary ring-2 ring-primary/5"
                     )}
                   >
-                    <div className="p-3 text-center border-b border-border text-[10px] font-bold uppercase bg-accent/30 tracking-wider">
+                    <div className={cn(
+                      "p-3 text-center border-b border-border text-[10px] font-black uppercase tracking-wider",
+                      idx === 0 ? "bg-primary text-white" : "bg-accent/50 text-text-muted"
+                    )}>
                       {info.label}
                     </div>
                     <div className="flex-1 p-4 flex flex-col items-center justify-center text-center gap-1">
-                      <div className="text-sm font-bold text-primary group-hover:scale-110 transition-transform">
+                      <div className="text-sm font-black text-primary group-hover:scale-110 transition-transform">
                         {info.value}
                       </div>
-                      <div className="text-[10px] text-text-muted font-medium opacity-60">
+                      <div className="text-[9px] text-brand-red font-black opacity-80 uppercase tracking-tighter">
                         Humar / Marsan
                       </div>
                     </div>
