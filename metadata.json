@@ -1,0 +1,6 @@
+{
+  "name": "Horarios Laborales Humar / Marsan",
+  "description": "Aplicación para consulta de horarios laborales por número de cédula, integrada con Google Sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
