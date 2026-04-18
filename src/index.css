@@ -5,22 +5,23 @@
   --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
 
   --color-bg: #ffffff;
-  --color-sidebar: #fafafa;
-  --color-primary: #D4AF37; /* Gold */
-  --color-primary-dark: #B8860B; /* Darker Gold */
-  --color-text-main: #1a1a1a;
-  --color-text-muted: #71717a;
-  --color-border: #f1f1f1;
-  --color-accent: #f8f8f8;
+  --color-sidebar: #ffffff;
+  --color-primary: #C5A059; /* Elegant Gold */
+  --color-primary-dark: #A6803B;
+  --color-text-main: #000000;
+  --color-text-muted: #444444;
+  --color-border: #C5A059; /* Gold borders */
+  --color-accent: #fafafa;
   
-  --color-brand-red: #C41E3A; /* Touch of Red */
+  --color-brand-red: #E31D2D; /* Marsan Red */
   
-  /* Additional theme colors Adjusted for Gold/Red/White */
-  --color-info-bg: #fffcf0;
-  --color-info-border: #f9f1c5;
-  --color-info-text: #856404;
-  --color-info-icon: #D4AF37;
+  /* Adjusted for Luxury aesthetic */
+  --color-info-bg: #ffffff;
+  --color-info-border: #C5A059;
+  --color-info-text: #000000;
+  --color-info-icon: #E31D2D;
 }
+
 
 
 @layer base {
